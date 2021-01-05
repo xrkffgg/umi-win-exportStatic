@@ -14,13 +14,16 @@ jobs:
 
       - name: install
         run: yarn
-
+        
       - name: build
         run: yarn docs:build
       
       - name: Commit and push if changed
         run: |-
           git diff
+          # 设置自己的用户名 邮箱
+          git config --global user.email "xrkffgg@vip.qq.com"
+          git config --global user.name "xrkffgg"
           git pull
           git add -A
           git commit -m "🤖 auto: updated dist" || exit 0

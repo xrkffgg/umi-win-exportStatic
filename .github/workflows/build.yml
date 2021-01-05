@@ -1,0 +1,27 @@
+name: Update docs-dist
+
+
+on:
+  push:
+    # 推送分支时触发，设置为自己的分支
+    branches: [ main ]
+
+jobs:
+  update-dist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: install
+        run: yarn
+
+      - name: build
+        run: yarn docs:build
+      
+      - name: Commit and push if changed
+        run: |-
+          git diff
+          git pull
+          git add -A
+          git commit -m "🤖 auto: updated dist" || exit 0
+          git push

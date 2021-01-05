@@ -4,7 +4,7 @@
 
 ## 现象描述
 
-当 config 设置 exportStatic 时，windows 环境下 docs:build 会出现如下问题。
+当 config 设置 exportStatic 时，windows 环境下 docs:build 会出现如下问题
 
 ![](./public/error.png)
 

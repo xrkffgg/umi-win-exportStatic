@@ -14,6 +14,7 @@ export default defineConfig({
   // Because of using GitHub Pages
   base: `/${repo}/`,
   publicPath: `/${repo}/`,
+  exportStatic: {},
   navs: [
     null,
     {
